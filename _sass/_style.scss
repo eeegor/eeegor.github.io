@@ -100,14 +100,20 @@ hr {
 
 // Header
 .header__logo {
-    color: white; 
+    color: #fff; 
     background: $color-primary;
     border-color: $color-primary;
+    position: relative;
 
 	&:hover { 
-        color: white; 
+        color: #fff; 
         background: $color-secondary; 
         border-color: $color-secondary 
+    }
+
+    &::before,
+    &::after {
+        background: #fff;
     }
 }
 
