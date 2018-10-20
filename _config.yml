@@ -33,6 +33,7 @@ social:
 
 rss: rss
 imprint: imprint.md
+google_analytics: UA-64042327-6
 
 # Build settings
 # theme: eeegor-jekyll-theme
