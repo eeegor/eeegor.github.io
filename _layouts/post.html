@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post__header">
+    <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post__meta">
+      <time class="text-muted" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">
+              {{ page.author }}
+            </span>
+          </span>
+      {%- endif -%}
+    </p>
+  </header>
+  <section class="post__content" itemprop="articleBody">
+    {{ content }}
+  </section>
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

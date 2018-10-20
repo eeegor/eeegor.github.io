@@ -1,0 +1,15 @@
+{%- assign view_class = page.url | remove: '/' | remove: '.html' -%}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body class="view view--{%- if page.url != "/" %}{{view_class}}{% else %}home{% endif -%}">
+    <div class="container">
+        {%- include header.html -%}
+        <main class="content" aria-label="Content">
+          {{ content }}
+        </main>
+        {%- include footer.html -%}
+    </div>
+  </body>
+</html>

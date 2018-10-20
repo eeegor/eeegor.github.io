@@ -1,0 +1,144 @@
+// Colors
+$color-primary: #0059ff;
+$color-secondary: #ffd000;
+$color-success: #21cf64;
+$color-danger: #fc2c2c;
+
+$grey-1: #222;
+$grey-2: #777;
+$grey-3: #999;
+$grey-4: #e6e6ec;
+
+@import 'reset';
+@import 'components';
+
+@font-face {
+    font-family: 'gilroy-light';
+    src: url('gilroy-light-webfont.woff2') format('woff2'),
+         url('gilroy-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroy-extrabold';
+    src: url('gilroy-extrabold-webfont.woff2') format('woff2'),
+         url('gilroy-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body { 
+    color: $grey-1; 
+    font-family: 'gilroy-light'; 
+}
+h1, h2, h3, h4, h5, h6, .header__logo { 
+    color: $grey-1; 
+    font-family: 'gilroy-extrabold' 
+}
+pre,
+code {
+	font-family: "SF Mono", "Roboto Mono", "Menlo";
+}
+
+a { 
+    color: $grey-1; 
+
+    &:hover { 
+        color: $grey-2 
+    } 
+}
+s { 
+    color: lighten($grey-1, 30%) 
+}
+pre, code { 
+    background-color: $grey-4 
+}
+hr { 
+    border-color: $grey-4 
+}
+
+// Modifier
+.text-muted { 
+    color: lighten($grey-1, 60%) 
+}
+.text-primary { 
+    color: $color-primary !important 
+}
+.text-secondary { 
+    color: $color-secondary !important 
+}
+.text-danger { 
+    color: $color-danger !important 
+}
+.text-success { 
+    color: $color-success !important 
+}
+
+// Links
+.link {
+	&::before { 
+        background: $color-primary 
+    }
+
+	&.link-external::before { 
+        background: $color-danger 
+    }
+
+	&::after { 
+        background: $grey-4 
+    }
+
+	&.is-active { 
+        color: $color-primary; 
+
+        &::before { 
+            background: $color-primary !important 
+        }
+    }
+}
+
+// Header
+.header__logo {
+    color: white; 
+    background: $color-primary;
+    border-color: $color-primary;
+
+	&:hover { 
+        color: white; 
+        background: $color-secondary; 
+        border-color: $color-secondary 
+    }
+}
+
+// Lists
+.social-media-list {
+	&__item {
+        transition: all .3s;
+		svg { 
+            path { 
+                fill: $grey-3 !important 
+            } 
+        }
+		&:hover { 
+            transition: all .3s;
+            
+            a { 
+                color: $color-secondary !important;
+
+            }
+            svg path { 
+                fill: $color-secondary !important;
+                transition: fill .3s;
+            } 
+            a.link-external { 
+                color: $color-danger !important;
+                
+            }
+            svg path { 
+                fill: $color-danger !important;
+                transition: fill .3s;
+            } 
+        }
+	}
+}
